@@ -1,0 +1,41 @@
+# Active in the Relintio/skills mirror. Inert in the monorepo, where the
+# equivalent checks run from .github/workflows/publish-sdks.yml's siblings.
+
+name: Validate skills
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Frontmatter, manifests, links, and committed credentials
+        run: node scripts/validate.mjs
+
+      - name: Discovery index is current
+        run: node scripts/build-index.mjs --check
+
+      - name: The skills CLI can resolve this repository
+        run: npx --yes skills@latest add . --list
+
+      - name: Plugin manifests are valid JSON
+        run: |
+          for f in .claude-plugin/marketplace.json \
+                   .codex-plugin/plugin.json \
+                   .agents/plugins/marketplace.json \
+                   .well-known/agent-skills/index.json; do
+            node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" && echo "ok $f"
+          done

@@ -1,0 +1,131 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "relintio-api",
+      "description": "Work directly against the Relintio Agent Contract v1 HTTP API — verify, log, batched telemetry, heartbeat, challenge init, geo lookup, cache purge. Use when building or maintaining a Relintio SDK, integrating from a runtime with no official SDK, scripting license checks in CI, or debugging raw request and response payloads.",
+      "type": "skill-md",
+      "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/core/relintio-api/SKILL.md",
+      "digest": "sha256:d9066c03ee7e4ea38b097c78902deabb5a04c6ce785e66f6e700641cdd1e25e9"
+    },
+    {
+      "name": "relintio-cli",
+      "description": "Operate the Relintio CLI — npx relintio@latest init, verify and doctor. Use when installing Relintio from the command line, scripting a license check in CI or a deploy pipeline, diagnosing a project without changing files, or interpreting the CLI's exit codes and flags. Covers runtime detection, package-manager selection, .env handling, automatic Express wiring, and the dry-run.",
+      "type": "skill-md",
+      "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/core/relintio-cli/SKILL.md",
+      "digest": "sha256:b75fc2118b3c080a2ad66fa1850a5a1dc81a63085f71d555ee451f2f706adff9"
+    },
+    {
+      "name": "relintio-setup",
+      "description": "Install, configure, and verify Relintio application protection in a codebase. Use when a project needs the Relintio agent added, when middleware ordering or registration point matters, when wiring UP_LICENSE_KEY and UP_API_URL, when a deployment must be verified against the control plane, or when a Relintio install exists but was never confirmed working. Covers Node.js, React, Python, PHP, Laravel, WordPress, Shopify, Go, Ruby, Rust, Java, .NET, and Zig.",
+      "type": "skill-md",
+      "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/core/relintio-setup/SKILL.md",
+      "digest": "sha256:946efe2db3a43a8c36a34c7031928221d9933b5ad8dc678e62dab36c668145b7"
+    },
+    {
+      "name": "relintio",
+      "description": "Relintio router. Use when the user mentions Relintio, or asks about adding a WAF, bot mitigation, bot detection, application protection, rate limiting, or a security agent to their app; installing or registering the Relintio agent in Node, React, Python, PHP, Laravel, WordPress, Shopify, Go, Ruby, Rust, Java, .NET or Zig; the relintio CLI; UP_LICENSE_KEY or UP_API_URL; risk scores, response tiers, challenges, blocked or challenged traffic, false positives, SEO safety, path exclusions for health checks and webhooks; license verification, deployment check-in, policy revisions; or the Agent Contract v1 API. Routes to the right skill for the task.",
+      "type": "skill-md",
+      "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/core/relintio/SKILL.md",
+      "digest": "sha256:b2caa8c0da40ea03bf9a94fabb64a8f33eae3ecf7feef5fb61103bc5e9ee336e"
+    },
+    {
+      "name": "relintio-debug",
+      "description": "Diagnose a Relintio installation that is not behaving — legitimate users blocked or challenged, the agent not appearing in the dashboard, policy changes not taking effect, verification failing, everyone behind a proxy sharing one IP, or protection silently doing nothing. Use when Relintio is already installed and something is wrong.",
+      "type": "skill-md",
+      "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/operations/relintio-debug/SKILL.md",
+      "digest": "sha256:0c4d0d3688cb7e1835f4602c7a353fe8ceeddd6462f94a0582cfc2b92306e95d"
+    },
+    {
+      "name": "relintio-policy",
+      "description": "Tune Relintio protection policy — risk score thresholds, response tiers, rate limits, path scoping, SEO safety, and the observe-then-enforce rollout. Use when legitimate traffic is being blocked or challenged, when bots are getting through, when choosing a starting preset, when excluding health checks or webhooks, or when deciding how aggressive to make enforcement.",
+      "type": "skill-md",
+      "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/operations/relintio-policy/SKILL.md",
+      "digest": "sha256:80091932a966d6b6e82ec393b1d6d3a2f8f84cc155a99063e0c9faf51bc47892"
+    },
+    {
+      "name": "relintio-dotnet",
+      "description": "Install and register the Relintio agent in an ASP.NET Core application. Use for UseRelintio placement relative to UseRouting and authentication, minimal APIs, configuration from User Secrets or environment, and the Relintio.Agent NuGet package.",
+      "type": "skill-md",
+      "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/runtimes/relintio-dotnet/SKILL.md",
+      "digest": "sha256:a1b570f5e9a1c926b03c5d61e13759aac1ba41ba027959c1b2bd2de4466ab82b"
+    },
+    {
+      "name": "relintio-go",
+      "description": "Install and register the Relintio agent in a Go application. Use for Gin middleware, net/http handler wrapping, Chi/Echo/Fiber chains, registration ordering, background sync goroutine shutdown, and typed rule handling. Covers the relintio-golang-agent module.",
+      "type": "skill-md",
+      "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/runtimes/relintio-go/SKILL.md",
+      "digest": "sha256:251598ff5df922da914568ab72f09210bd64440a8cd68ca19cc425d928d4f7d3"
+    },
+    {
+      "name": "relintio-java",
+      "description": "Install and register the Relintio agent in a Java application. Use for Spring Boot filter registration and precedence ahead of Spring Security, Jakarta servlet filter declaration order, jakarta versus javax namespaces, and the com.relintio:relintio-agent artifact.",
+      "type": "skill-md",
+      "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/runtimes/relintio-java/SKILL.md",
+      "digest": "sha256:a7890f668301fbfa9afa1f5889c4be761ec88b4a61dc73ea9d0d19cebf042999"
+    },
+    {
+      "name": "relintio-node",
+      "description": "Install and register the Relintio agent in a Node.js application. Use for Express middleware ordering, the zero-code NODE_OPTIONS preload, Fastify/Koa/Hapi/raw http servers, Next.js API routes, serverless caveats, and the @relintio/agent package options. Covers npm, pnpm, yarn and bun.",
+      "type": "skill-md",
+      "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/runtimes/relintio-node/SKILL.md",
+      "digest": "sha256:1924816f4ee82d0f63997bb1dacd882d95f752a53fe2d00f56d7d4f8112e7834"
+    },
+    {
+      "name": "relintio-php",
+      "description": "Install and register the Relintio agent in a PHP or Laravel application. Use for front-controller placement, auto_prepend_file, Laravel global middleware ordering, config caching and env() pitfalls, OPcache reloads, and webhook path exclusions. Covers the relintio-agent/agent Composer package.",
+      "type": "skill-md",
+      "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/runtimes/relintio-php/SKILL.md",
+      "digest": "sha256:dbafbe05b9dc4590cb4f4f2c99e0e44e2da5cc95c67556353566240168ab0e4b"
+    },
+    {
+      "name": "relintio-python",
+      "description": "Install and register the Relintio agent in a Python application. Use for FastAPI and Starlette ASGI wrapping, Django middleware ordering, the sitecustomize zero-code hook, Gunicorn and Uvicorn worker pitfalls, and the relintio-agent package. Covers pip, poetry and uv.",
+      "type": "skill-md",
+      "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/runtimes/relintio-python/SKILL.md",
+      "digest": "sha256:1a65e2400a880c66ba61f66119d7bf12c2c04555c6a51992c7ee2be7d94c9c6d"
+    },
+    {
+      "name": "relintio-react",
+      "description": "Add the Relintio client companion to a React or Next.js frontend. Use for RelintioProvider placement, why a client agent reports but cannot enforce, the client-safe key versus the server license key, and why a bundler-inlined key must never be the server key.",
+      "type": "skill-md",
+      "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/runtimes/relintio-react/SKILL.md",
+      "digest": "sha256:ccd13d8faa2454db627228d9000beaf29d35eb874a54747fbfc0c2818400add4"
+    },
+    {
+      "name": "relintio-ruby",
+      "description": "Install and register the Relintio agent in a Ruby application. Use for Rack middleware in config.ru, Rails middleware insertion order, Puma forking and worker boot, Sinatra pitfalls, and the relintio-agent gem.",
+      "type": "skill-md",
+      "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/runtimes/relintio-ruby/SKILL.md",
+      "digest": "sha256:c49f84a3c514f694d439a4f48326c4f215950dc1bcd2b9800dd2d191b5c0d3cd"
+    },
+    {
+      "name": "relintio-rust",
+      "description": "Install and register the Relintio agent in a Rust application. Use for Axum tower layers, Actix-web wrap ordering, the outermost-last layer inversion, Tokio runtime requirements, and the relintio-agent crate.",
+      "type": "skill-md",
+      "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/runtimes/relintio-rust/SKILL.md",
+      "digest": "sha256:ff994e5aa9fe0a125a4383c25cb5371abf2ef4d1092d91734ea2dbd059278482"
+    },
+    {
+      "name": "relintio-shopify",
+      "description": "Connect a Shopify store to Relintio. Use for the dashboard OAuth connection and storefront ScriptTag, why there is nothing to install from the command line, the checkout boundary, and theme changes that strip the ScriptTag.",
+      "type": "skill-md",
+      "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/runtimes/relintio-shopify/SKILL.md",
+      "digest": "sha256:313df6aae36ac5152c23415a86ba5775385d390b9265eff49d1e94f1ef663b94"
+    },
+    {
+      "name": "relintio-wordpress",
+      "description": "Install the Relintio plugin on a WordPress site. Use for the license-bound plugin zip from the dashboard, wp-config.php constant placement, mu-plugins loading order, the private update channel, and the wp-cron, REST and admin-ajax exclusions that cause false positives.",
+      "type": "skill-md",
+      "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/runtimes/relintio-wordpress/SKILL.md",
+      "digest": "sha256:47b7e3a3e0bb020038d76a82491e1e3ff04bd02025fa7d60204225ac9ffd7f3f"
+    },
+    {
+      "name": "relintio-zig",
+      "description": "Install and register the Relintio agent in a Zig application. Use for zig fetch and build.zig wiring, the assess-then-dispatch decision switch, fail-open default branches, allocator ownership, and typed rule handling.",
+      "type": "skill-md",
+      "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/runtimes/relintio-zig/SKILL.md",
+      "digest": "sha256:814515ce9cf8e4a27110042ee80be83c38af2797bb6f79589539942a22d2d13e"
+    }
+  ]
+}

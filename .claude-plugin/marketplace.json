@@ -1,0 +1,55 @@
+{
+  "name": "relintio-skills",
+  "owner": {
+    "name": "Relintio",
+    "email": "support@relintio.com"
+  },
+  "metadata": {
+    "description": "Official Relintio skills for AI coding agents",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "core",
+      "description": "Router, the install workflow, the relintio CLI, and the Agent Contract v1 API reference",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/core/relintio-api",
+        "./skills/core/relintio-cli",
+        "./skills/core/relintio-setup",
+        "./skills/core/relintio"
+      ]
+    },
+    {
+      "name": "runtimes",
+      "description": "Per-runtime installation and middleware registration for all twelve supported stacks",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/runtimes/relintio-dotnet",
+        "./skills/runtimes/relintio-go",
+        "./skills/runtimes/relintio-java",
+        "./skills/runtimes/relintio-node",
+        "./skills/runtimes/relintio-php",
+        "./skills/runtimes/relintio-python",
+        "./skills/runtimes/relintio-react",
+        "./skills/runtimes/relintio-ruby",
+        "./skills/runtimes/relintio-rust",
+        "./skills/runtimes/relintio-shopify",
+        "./skills/runtimes/relintio-wordpress",
+        "./skills/runtimes/relintio-zig"
+      ]
+    },
+    {
+      "name": "operations",
+      "description": "Policy tuning and diagnosis for a Relintio deployment that is already live",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/operations/relintio-debug",
+        "./skills/operations/relintio-policy"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "name": "relintio-skills",
+  "version": "1.0.0",
+  "description": "Official Relintio skills for AI coding agents.",
+  "author": {
+    "name": "Relintio",
+    "email": "support@relintio.com",
+    "url": "https://relintio.com"
+  },
+  "homepage": "https://relintio.com",
+  "repository": "https://github.com/Relintio/skills",
+  "license": "MIT",
+  "keywords": [
+    "relintio",
+    "waf",
+    "security",
+    "bot-detection",
+    "bot-mitigation",
+    "rate-limiting",
+    "middleware",
+    "threat-protection"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Relintio",
+    "shortDescription": "Application protection that runs inside your runtime",
+    "longDescription": "Official Relintio skills bundle for AI coding agents. A router skill, the install workflow, the relintio CLI, per-runtime registration for Node, React, Python, PHP, WordPress, Shopify, Go, Ruby, Rust, Java, .NET and Zig, plus policy tuning, diagnosis, and the Agent Contract v1 API reference.",
+    "developerName": "Relintio",
+    "category": "Coding",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://relintio.com",
+    "defaultPrompt": [
+      "Add Relintio protection to my app",
+      "Why is Relintio challenging my uptime monitor?",
+      "Exclude my webhooks and health checks from protection",
+      "Check whether my Relintio license is active"
+    ],
+    "brandColor": "#EFD420",
+    "composerIcon": "./assets/relintio-emblem.svg",
+    "logo": "./assets/relintio-emblem.svg"
+  }
+}
