@@ -1,6 +1,6 @@
 ---
 name: relintio
-description: Relintio router. Use when the user mentions Relintio, or asks about adding a WAF, bot mitigation, bot detection, application protection, rate limiting, or a security agent to their app; installing or registering the Relintio agent in Node, React, Python, PHP, Laravel, WordPress, Shopify, Go, Ruby, Rust, Java, .NET or Zig; the relintio CLI; UP_LICENSE_KEY or UP_API_URL; risk scores, response tiers, challenges, blocked or challenged traffic, false positives, SEO safety, path exclusions for health checks and webhooks; license verification, deployment check-in, policy revisions; or the Agent Contract v1 API. Routes to the right skill for the task.
+description: Relintio router. Use when the user mentions Relintio, or asks about adding a WAF, bot mitigation, bot detection, application protection, rate limiting, or a security agent to their app; installing or registering the Relintio agent in Node, React, Vue, Svelte, Angular, Expo, Python, PHP, Laravel, WordPress, Shopify, Go, Ruby, Rust, Java, C#/.NET, Zig, Express, Nuxt, Vercel, Supabase or Firebase; the relintio CLI; UP_LICENSE_KEY or UP_API_URL; risk scores, response tiers, challenges, blocked or challenged traffic, false positives, SEO safety, path exclusions for health checks and webhooks; license verification, deployment check-in, policy revisions; or the Agent Contract v1 API. Routes to the right skill for the task.
 license: MIT
 metadata:
   version: "1.0.0"

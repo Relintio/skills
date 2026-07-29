@@ -1,6 +1,6 @@
 ---
 name: relintio-setup
-description: Install, configure, and verify Relintio application protection in a codebase. Use when a project needs the Relintio agent added, when middleware ordering or registration point matters, when wiring UP_LICENSE_KEY and UP_API_URL, when a deployment must be verified against the control plane, or when a Relintio install exists but was never confirmed working. Covers Node.js, React, Python, PHP, Laravel, WordPress, Shopify, Go, Ruby, Rust, Java, .NET, and Zig.
+description: Install, configure, and verify Relintio application protection in a codebase. Use when a project needs the Relintio agent added, when middleware ordering or registration point matters, when wiring UP_LICENSE_KEY and UP_API_URL, when a deployment must be verified against the control plane, or when a Relintio install exists but was never confirmed working. Covers Node.js, React, Vue, Svelte, Angular, Expo, Python, PHP, Laravel, WordPress, Shopify, Go, Ruby, Rust, Java, C#/.NET, Zig, Express, Nuxt, Vercel, Supabase and Firebase.
 license: MIT
 metadata:
   version: "1.0.0"

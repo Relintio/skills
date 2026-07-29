@@ -17,17 +17,17 @@
     },
     {
       "name": "relintio-setup",
-      "description": "Install, configure, and verify Relintio application protection in a codebase. Use when a project needs the Relintio agent added, when middleware ordering or registration point matters, when wiring UP_LICENSE_KEY and UP_API_URL, when a deployment must be verified against the control plane, or when a Relintio install exists but was never confirmed working. Covers Node.js, React, Python, PHP, Laravel, WordPress, Shopify, Go, Ruby, Rust, Java, .NET, and Zig.",
+      "description": "Install, configure, and verify Relintio application protection in a codebase. Use when a project needs the Relintio agent added, when middleware ordering or registration point matters, when wiring UP_LICENSE_KEY and UP_API_URL, when a deployment must be verified against the control plane, or when a Relintio install exists but was never confirmed working. Covers Node.js, React, Vue, Svelte, Angular, Expo, Python, PHP, Laravel, WordPress, Shopify, Go, Ruby, Rust, Java, C#/.NET, Zig, Express, Nuxt, Vercel, Supabase and Firebase.",
       "type": "skill-md",
       "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/core/relintio-setup/SKILL.md",
-      "digest": "sha256:946efe2db3a43a8c36a34c7031928221d9933b5ad8dc678e62dab36c668145b7"
+      "digest": "sha256:76a6fa3f3eb90a799b0db1dabe43a213107ce7a08289205de5d8ae520a621d35"
     },
     {
       "name": "relintio",
-      "description": "Relintio router. Use when the user mentions Relintio, or asks about adding a WAF, bot mitigation, bot detection, application protection, rate limiting, or a security agent to their app; installing or registering the Relintio agent in Node, React, Python, PHP, Laravel, WordPress, Shopify, Go, Ruby, Rust, Java, .NET or Zig; the relintio CLI; UP_LICENSE_KEY or UP_API_URL; risk scores, response tiers, challenges, blocked or challenged traffic, false positives, SEO safety, path exclusions for health checks and webhooks; license verification, deployment check-in, policy revisions; or the Agent Contract v1 API. Routes to the right skill for the task.",
+      "description": "Relintio router. Use when the user mentions Relintio, or asks about adding a WAF, bot mitigation, bot detection, application protection, rate limiting, or a security agent to their app; installing or registering the Relintio agent in Node, React, Vue, Svelte, Angular, Expo, Python, PHP, Laravel, WordPress, Shopify, Go, Ruby, Rust, Java, C#/.NET, Zig, Express, Nuxt, Vercel, Supabase or Firebase; the relintio CLI; UP_LICENSE_KEY or UP_API_URL; risk scores, response tiers, challenges, blocked or challenged traffic, false positives, SEO safety, path exclusions for health checks and webhooks; license verification, deployment check-in, policy revisions; or the Agent Contract v1 API. Routes to the right skill for the task.",
       "type": "skill-md",
       "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/core/relintio/SKILL.md",
-      "digest": "sha256:b2caa8c0da40ea03bf9a94fabb64a8f33eae3ecf7feef5fb61103bc5e9ee336e"
+      "digest": "sha256:74cc96f8655d29be5e9348fff9b3179e50466eb366901ae6496a0f94c42241e7"
     },
     {
       "name": "relintio-debug",
@@ -44,11 +44,39 @@
       "digest": "sha256:80091932a966d6b6e82ec393b1d6d3a2f8f84cc155a99063e0c9faf51bc47892"
     },
     {
+      "name": "relintio-angular",
+      "description": "Add the Relintio agent to an Angular 16+ application. Use for provideRelintio, the functional HttpClient interceptor, the challenge component, and the publishable key versus the licence key.",
+      "type": "skill-md",
+      "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/runtimes/relintio-angular/SKILL.md",
+      "digest": "sha256:9b3d3f8374a09b834c685a67765347194a50d0e4ce68ee254f8bfd3d59ada804"
+    },
+    {
       "name": "relintio-dotnet",
       "description": "Install and register the Relintio agent in an ASP.NET Core application. Use for UseRelintio placement relative to UseRouting and authentication, minimal APIs, configuration from User Secrets or environment, and the Relintio.Agent NuGet package.",
       "type": "skill-md",
       "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/runtimes/relintio-dotnet/SKILL.md",
       "digest": "sha256:a1b570f5e9a1c926b03c5d61e13759aac1ba41ba027959c1b2bd2de4466ab82b"
+    },
+    {
+      "name": "relintio-expo",
+      "description": "Add the Relintio agent to an Expo or React Native app. Use for the native client, the required domain option, the challenge WebView, why the device signals are smaller on native, and why an app binary may only carry a publishable key.",
+      "type": "skill-md",
+      "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/runtimes/relintio-expo/SKILL.md",
+      "digest": "sha256:bb632c8be1df93b863f1d2d4c37a8bdd0826eae26220ea70b425b94ef4bf90b7"
+    },
+    {
+      "name": "relintio-express",
+      "description": "Add the Relintio agent to an Express application. Use for middleware placement before the body parser, path scoping, the onError reporter, and why the boundary fails open rather than answering 500.",
+      "type": "skill-md",
+      "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/runtimes/relintio-express/SKILL.md",
+      "digest": "sha256:b165b6cb75e8ca7ed28d83a5e126cf03e98d8d2ef9e3745ad73092e7891eb49c"
+    },
+    {
+      "name": "relintio-firebase",
+      "description": "Add Relintio to Firebase Cloud Functions. Use for wrapping an onRequest handler, declaring the secret, sharing one agent across exports, and why this uses the Node engine rather than the edge one.",
+      "type": "skill-md",
+      "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/runtimes/relintio-firebase/SKILL.md",
+      "digest": "sha256:c9fcdfb09922f5c8eb3148126405852ae7e8e2fbc849f27c93280a0f48f15f22"
     },
     {
       "name": "relintio-go",
@@ -72,6 +100,13 @@
       "digest": "sha256:1924816f4ee82d0f63997bb1dacd882d95f752a53fe2d00f56d7d4f8112e7834"
     },
     {
+      "name": "relintio-nuxt",
+      "description": "Add the Relintio module to a Nuxt 3 or 4 application. Use for the two-key model — a licence key on Nitro and a publishable key in the browser — the challenge overlay, and why runtimeConfig makes swapping them a published credential.",
+      "type": "skill-md",
+      "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/runtimes/relintio-nuxt/SKILL.md",
+      "digest": "sha256:e397f5b6e7aedd1ee7f01794a41505285fbe4cadcac2f9b74f0a003b33b2d199"
+    },
+    {
       "name": "relintio-php",
       "description": "Install and register the Relintio agent in a PHP or Laravel application. Use for front-controller placement, auto_prepend_file, Laravel global middleware ordering, config caching and env() pitfalls, OPcache reloads, and webhook path exclusions. Covers the relintio-agent/agent Composer package.",
       "type": "skill-md",
@@ -87,10 +122,10 @@
     },
     {
       "name": "relintio-react",
-      "description": "Add the Relintio client companion to a React or Next.js frontend. Use for RelintioProvider placement, why a client agent reports but cannot enforce, the client-safe key versus the server license key, and why a bundler-inlined key must never be the server key.",
+      "description": "Add the Relintio agent to a React or Next.js frontend. Use for RelintioProvider placement, the fetch interceptor and challenge overlay, why a browser agent reacts to enforcement rather than performing it, and the publishable key versus the licence key.",
       "type": "skill-md",
       "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/runtimes/relintio-react/SKILL.md",
-      "digest": "sha256:ccd13d8faa2454db627228d9000beaf29d35eb874a54747fbfc0c2818400add4"
+      "digest": "sha256:93556922cf0aeb43828ad5bf2d768982e2b0313c4578e03efeb1ac1a88a7a183"
     },
     {
       "name": "relintio-ruby",
@@ -112,6 +147,34 @@
       "type": "skill-md",
       "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/runtimes/relintio-shopify/SKILL.md",
       "digest": "sha256:313df6aae36ac5152c23415a86ba5775385d390b9265eff49d1e94f1ef663b94"
+    },
+    {
+      "name": "relintio-supabase",
+      "description": "Add Relintio to a Supabase Edge Function. Use for the jsr: import, wrapping the Deno handler, setting the licence key as a Supabase secret, and identifying the visitor behind the Supabase proxy.",
+      "type": "skill-md",
+      "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/runtimes/relintio-supabase/SKILL.md",
+      "digest": "sha256:944595f8cf1734421c5940f478a64e47bb311a3f17418b25e88b1b622251685b"
+    },
+    {
+      "name": "relintio-svelte",
+      "description": "Add the Relintio agent to a Svelte or SvelteKit frontend. Use for the client factory in the root layout, the challenge action, SSR safety, teardown on navigation, and the publishable key versus the licence key.",
+      "type": "skill-md",
+      "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/runtimes/relintio-svelte/SKILL.md",
+      "digest": "sha256:482de55695d3d816ea904aeb8b283c5b81f54e9572069cff40c92568ec3ff502"
+    },
+    {
+      "name": "relintio-vercel",
+      "description": "Add Relintio to a Vercel project as edge middleware. Use for middleware.js placement, the matcher, composing with existing middleware, environment variables, and what per-isolate caching means for rules and rate limits.",
+      "type": "skill-md",
+      "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/runtimes/relintio-vercel/SKILL.md",
+      "digest": "sha256:68f784af39a9b6f950be8213ad584c2add9e7e88851304499b725685a8e34f8b"
+    },
+    {
+      "name": "relintio-vue",
+      "description": "Add the Relintio agent to a Vue 3 or Vite frontend. Use for plugin registration, the challenge overlay composable, Content Security Policy, and the publishable key versus the licence key.",
+      "type": "skill-md",
+      "url": "https://raw.githubusercontent.com/Relintio/skills/main/skills/runtimes/relintio-vue/SKILL.md",
+      "digest": "sha256:dc7a2381ee6d68ac7564ab2fc3885e37228909e7609725e4e2223c94faad5243"
     },
     {
       "name": "relintio-wordpress",

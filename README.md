@@ -63,18 +63,50 @@ git clone https://github.com/Relintio/skills ~/.claude/skills/relintio
 
 | Skill | Runtime | Registration point |
 | --- | --- | --- |
+Grouped by where the agent runs, because that decides which credential it
+holds. The frontend skills take a **publishable key** (`pk_live_…`) and must
+never be given a licence key.
+
+**Frontend and browser**
+
+| Skill | Runtime | Registration point |
+| --- | --- | --- |
+| `relintio-react` | React / Next.js | Provider at the app root, fetch interceptor |
+| `relintio-vue` | Vue 3 / Vite | `app.use(relintio)`, challenge composable |
+| `relintio-svelte` | Svelte / SvelteKit | Client factory in the root layout |
+| `relintio-angular` | Angular 16+ | `provideRelintio()`, HttpClient interceptor |
+| `relintio-expo` | Expo / React Native | Native client, challenge WebView |
+| `relintio-shopify` | Shopify | Dashboard OAuth and storefront ScriptTag |
+
+**Backend and server**
+
+| Skill | Runtime | Registration point |
+| --- | --- | --- |
 | `relintio-node` | Node.js | Express middleware, or the zero-code preload |
-| `relintio-react` | React / Next.js | Client provider — companion, not enforcement |
 | `relintio-python` | Python | ASGI wrapper, Django middleware, sitecustomize |
 | `relintio-php` | PHP / Laravel | Front controller, or `auto_prepend_file` |
-| `relintio-wordpress` | WordPress | Plugin zip, `wp-config.php`, mu-plugins |
-| `relintio-shopify` | Shopify | Dashboard OAuth and storefront ScriptTag |
 | `relintio-go` | Go | Gin middleware, or `net/http` wrapping |
 | `relintio-ruby` | Ruby | Rack in `config.ru`, Rails `insert_before 0` |
 | `relintio-rust` | Rust | Axum layer, Actix wrap |
 | `relintio-java` | Java | Spring filter at highest precedence |
-| `relintio-dotnet` | .NET | `UseRelintio()` before `UseRouting()` |
+| `relintio-dotnet` | C# / .NET | `UseRelintio()` before `UseRouting()` |
 | `relintio-zig` | Zig | Assess before the protected handler |
+
+**Framework adapters**
+
+| Skill | Runtime | Registration point |
+| --- | --- | --- |
+| `relintio-express` | Express | One `app.use()`, before the body parser |
+| `relintio-nuxt` | Nuxt 3 / 4 | Module — Nitro middleware and client plugin |
+
+**Platform integrations**
+
+| Skill | Runtime | Registration point |
+| --- | --- | --- |
+| `relintio-wordpress` | WordPress | Plugin zip, `wp-config.php`, mu-plugins |
+| `relintio-vercel` | Vercel | `middleware.js` at the project root |
+| `relintio-supabase` | Supabase | Wraps the Deno handler |
+| `relintio-firebase` | Firebase | Wraps an `onRequest` handler |
 
 ### Operations
 

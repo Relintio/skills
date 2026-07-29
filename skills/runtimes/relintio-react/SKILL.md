@@ -1,6 +1,6 @@
 ---
 name: relintio-react
-description: Add the Relintio client companion to a React or Next.js frontend. Use for RelintioProvider placement, why a client agent reports but cannot enforce, the client-safe key versus the server license key, and why a bundler-inlined key must never be the server key.
+description: Add the Relintio agent to a React or Next.js frontend. Use for RelintioProvider placement, the fetch interceptor and challenge overlay, why a browser agent reacts to enforcement rather than performing it, and the publishable key versus the licence key.
 license: MIT
 metadata:
   version: "1.0.0"
@@ -13,7 +13,9 @@ Package: `@relintio/react-agent` · React 16.8–19 · [quickstart](https://reli
 
 ## Read this first
 
-The React agent is a **companion, not protection**. It collects client-side signals and reports them; it cannot enforce a policy, because anything running in the browser is under the visitor's control. If this project has a backend, protect the backend. Install the React agent in addition, never instead.
+The React agent **reacts to enforcement; it does not perform it**. Anything running in a browser is under the visitor's control, so the decision is never made there — it asks Relintio for a verdict, and when your own API answers `403` with `X-Relintio-Challenge` it opens the challenge and replays the request that was refused.
+
+If this project has a backend, protect the backend. Install the React agent in addition, never instead.
 
 Say this out loud to whoever asked. A team that believes their app is protected when only the client agent is installed is worse off than one that knows it is unprotected.
 
@@ -30,20 +32,25 @@ At the app root, above everything that makes requests:
 ```jsx
 import { RelintioProvider } from '@relintio/react-agent';
 
+const config = {
+  publishableKey: import.meta.env.VITE_RELINTIO_PUBLISHABLE_KEY, // pk_live_…
+  apiUrl: 'https://api.relintio.com/v1',
+};
+
 export default function App({ children }) {
-  return (
-    <RelintioProvider licenseKey={import.meta.env.VITE_UP_LICENSE_KEY}>
-      {children}
-    </RelintioProvider>
-  );
+  return <RelintioProvider config={config}>{children}</RelintioProvider>;
 }
 ```
 
 ## The key problem
 
-Anything a bundler inlines is public. `VITE_`, `NEXT_PUBLIC_`, and `REACT_APP_` prefixed values ship to every visitor in plain text.
+Anything a bundler inlines is public. `VITE_`, `NEXT_PUBLIC_` and `REACT_APP_` prefixed values ship to every visitor in plain text.
 
-Use the **client-safe** key generated for browser agents in the dashboard — not the server license key. If you are about to paste a `UP_LIVE_…` server key into a `NEXT_PUBLIC_` variable, stop. That key belongs on the server only.
+The field is `publishableKey` and it takes a **publishable key** (`pk_live_…`). It is public by design and can do exactly one thing: ask Relintio for a verdict. It cannot read your policy, write telemetry, or mint a challenge pass.
+
+A **licence key** (`UP_LIVE_…`) is the HMAC key that signs challenge passports and request signatures. Anyone holding it can walk through the WAF it belongs to. If you are about to paste one into a `NEXT_PUBLIC_` variable, stop — and if one is already there, rotate it in Dashboard → API keys before replacing it.
+
+The provider refuses to start on anything that does not begin `pk_`, logs an error, and never transmits it. That check is the last line, not the plan.
 
 ## Gotchas
 
